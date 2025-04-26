@@ -13,13 +13,16 @@ const Loader = () => {
         />
       </span>
       <div className="text-container">
-        <span className="letter">E</span>
-        <span className="letter">Y</span>
-        <span className="letter">E</span>
+        <span className="letter">C</span>
+        <span className="letter">H</span>
+        <span className="letter">A</span>
         <span className="letter">S</span>
-        <span className="letter">O</span>
         <span className="letter">M</span>
-        <span className="letter">E</span>
+        <span className="letter">A</span>
+        <span className="letter">G</span>
+        <span className="letter">H</span>
+        <span className="letter">A</span>
+        <span className="letter">R</span>
       </div>
     </div>
   );

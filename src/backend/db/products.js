@@ -19,7 +19,7 @@ import sports7 from "../../assets/sports/sports7.png";
 import sports8 from "../../assets/sports/sports8.png";
 import sports9 from "../../assets/sports/sports9.png";
 
-import vision1 from "../../assets/vision/vision1.png";
+import vision10 from "../../assets/vision/vision10.png";
 import vision2 from "../../assets/vision/vision2.png";
 import vision3 from "../../assets/vision/vision3.png";
 import vision4 from "../../assets/vision/vision4.png";
@@ -267,13 +267,13 @@ export const products = [
     qty: 0,
     name: "Full rim acetate black",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    brand: "Ray-Ban",
+      "Magnetic on Sunglasses Anti blue light lenses",
+    brand: "Grey Jack",
     category: "Vision",
     gender: "Men",
     weight: "200g",
     quantity: 10,
-    image: vision1,
+    image: vision10,
     rating: 4.5,
     price: 1999,
     newPrice: 1900,

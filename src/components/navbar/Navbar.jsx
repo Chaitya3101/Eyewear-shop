@@ -46,14 +46,7 @@ const Navbar = () => {
     >
       <div className="flex justify-between w-full items-center">
         <section className="relative flex items-center">
-          <Link to="/profile">
-            <img
-              className="rounded-full border-2  bg-yellow-300 me-3 hover:bg-yellow-500 cursor-pointer"
-              src={defaultUser}
-              alt="userProfileImage"
-              width={40}
-            />
-          </Link>
+   
 
           <Logo />
         </section>
@@ -93,6 +86,14 @@ const Navbar = () => {
               )}
             </li>
           </ul>
+          <Link to="/profile">
+            <img
+              className="rounded-full border-2  bg-yellow-300 me-3 hover:bg-yellow-500 cursor-pointer"
+              src={defaultUser}
+              alt="userProfileImage"
+              width={40}
+            />
+          </Link>
           <section className="md:hidden cursor-pointer relative">
             <RxHamburgerMenu
               className="text-lg"

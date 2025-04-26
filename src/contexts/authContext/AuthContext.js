@@ -47,30 +47,49 @@ const AuthContextProvider = ({ children }) => {
 
   const loginHandler = async ({ email = "", password = "" }) => {
     setLoggingIn(true);
+    const localEmail = "demo@example.com";
+    const localPassword = "123456";
     try {
-      const response = await loginService(email, password);
-      console.log({ response });
-      if (response.status === 200 || response.status === 201) {
-        localStorage.setItem("token", response?.data?.encodedToken);
-        localStorage.setItem(
-          "userInfo",
-          JSON.stringify(response?.data?.foundUser)
-        );
-        setToken(response?.data?.encodedToken);
-        notify("success", "Logged In Successfully!!");
-      }
-    } catch (err) {
-      console.log(err);
-      notify(
-        "error",
-        err?.response?.data?.errors
-          ? err?.response?.data?.errors[0]
-          : "Some Error Occurred!!"
+    if (email === localEmail && password === localPassword) {
+      const mockToken = "mock_token_123";
+      const mockUser = {
+        _id: "local123",
+        email: localEmail,
+        username: "Local Demo User",
+      };
+
+      localStorage.setItem("token", mockToken);
+      localStorage.setItem("userInfo", JSON.stringify(mockUser));
+      setToken(mockToken);
+      setUserInfo(mockUser);
+      notify("success", "Logged in successfully (Local User)!");
+    } else {
+
+    // 👇 Backend login fallback (optional, can comment out if not needed)
+    const response = await loginService(email, password);
+    if (response.status === 200 || response.status === 201) {
+      localStorage.setItem("token", response?.data?.encodedToken);
+      localStorage.setItem(
+        "userInfo",
+        JSON.stringify(response?.data?.foundUser)
       );
-    } finally {
-      setLoggingIn(false);
+      setToken(response?.data?.encodedToken);
+      setUserInfo(response?.data?.foundUser);
+      notify("success", "Logged In Successfully!");
     }
-  };
+  }
+} catch (err) {
+    console.log(err);
+    notify(
+      "error",
+      err?.response?.data?.errors
+        ? err?.response?.data?.errors[0]
+        : "Some Error Occurred!!"
+    );
+  } finally {
+    setLoggingIn(false);
+  }
+};
 
   const logoutHandler = () => {
     localStorage.removeItem("token");

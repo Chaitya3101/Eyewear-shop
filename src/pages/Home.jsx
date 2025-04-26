@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Banner, CategoryList, Footer, Trending } from "../components";
+import { Banner, VirtualTryOn, CategoryList, Footer, Trending } from "../components";
 
 const Home = () => {
   const catRef = useRef(null);
@@ -7,6 +7,7 @@ const Home = () => {
     <>
       <Banner catRef={catRef} />
       <Trending />
+      <VirtualTryOn/>
       <CategoryList catRef={catRef} />
       <Footer />
     </>
